@@ -6,75 +6,13 @@ using System.Threading.Tasks;
 
 namespace Strategy
 {
-    class Context
+     class Program
     {
-        // maintain a reference to one of strategy objects
-        // should work with all strateies
-        private IStrategy _strategy;
+        // Allow changing business logic/algorithm (strategies) at runtime
+        // 1. can use it to extract the varying behavior into separate class
+        // 2. can isolate business logic 
 
-        public Context()
-        { }
 
-        // Constructor that accept a strategy 
-        public Context(IStrategy strategy)
-        {
-            this._strategy = strategy;
-        }
-
-        // settor that allows at runtime
-        public void SetStrategy(IStrategy strategy)
-        {
-            this._strategy = strategy;
-        }
-
-        public void DoSomeBusinessLogic()
-        {
-            Console.WriteLine("Context: Sorting data using the strategy");
-            
-            // call the strategy but dont know its method
-            var result = this._strategy.DoAlgorithm(new List<string> { "a", "b", "c", "d", "e" });
-
-            string resultStr = string.Empty;
-            foreach (var element in result as List<string>)
-            {
-                resultStr += element + ",";
-            }
-
-            Console.WriteLine(resultStr);
-        }
-    }
-
-    // Strategy interface
-    public interface IStrategy
-    {
-        object DoAlgorithm(object data);
-    }
-
-    class ConcreteStrategyA : IStrategy
-    {
-        public object DoAlgorithm(object data)
-        {
-            var list = data as List<string>;
-            list.Sort();
-
-            return list;
-        }
-    }
-
-    class ConcreteStrategyB : IStrategy
-    {
-        public object DoAlgorithm(object data)
-        {
-            var list = data as List<string>;
-            list.Sort();
-            list.Reverse();
-
-            return list;
-        }
-    }
-
-    class Program
-    {
         static void Main(string[] args)
         {
             var context = new Context();
@@ -83,10 +21,11 @@ namespace Strategy
             context.SetStrategy(new ConcreteStrategyA());
             context.DoSomeBusinessLogic();
 
-            Console.WriteLine();
+            Console.WriteLine("Client: Strategy is set to reverse sorting");
+            context.SetStrategy(new ConcreteStrategyB());
+            context.DoSomeBusinessLogic();
 
-
-
+            Console.ReadLine();
         }
     }
 }
