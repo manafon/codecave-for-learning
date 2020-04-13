@@ -8,8 +8,14 @@ namespace Decorator
 {
     class Program
     {
+        /**
+         * Structural Pattern
+         * Act as Wrapper
+         * to attach new behaviors to objects
+         */
         static void Main(string[] args)
         {
+            // use for trigger the component but independent of its content
             Client client = new Client();
 
             var simple = new ConcreteComponent();
@@ -17,7 +23,7 @@ namespace Decorator
             client.ClientCode(simple);
             Console.WriteLine();
 
-
+            // wrap twice
             ConcreteDecoratorA decorator1 = new ConcreteDecoratorA(simple);
             ConcreteDecoratorB decorator2 = new ConcreteDecoratorB(decorator1);
 
