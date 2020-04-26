@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediator
 {
+    // encapsulate relationship
     class ConcreteMediator : IMediator
     {
         private Component1 _component1;

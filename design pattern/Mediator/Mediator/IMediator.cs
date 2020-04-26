@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Mediator
 {
+    // Mediator interface
+    // delares methods of communication 
     public interface IMediator
     {
         void Notify(object sender, string ev);

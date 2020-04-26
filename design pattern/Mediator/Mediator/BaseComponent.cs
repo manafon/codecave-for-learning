@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Mediator
 {
     // Base component with basic functionality 
+    // each component has a referebce to a mediator
     class BaseComponent
     {
         protected IMediator _mediator;

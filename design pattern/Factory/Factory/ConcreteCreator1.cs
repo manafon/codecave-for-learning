@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Factory
 {
+    // Concrete creator override factory method to change resulting product
     class ConcreteCreator1 : Creator
     {
         public override IProduct FactoryMethod()

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mediator
 {
+    // Contain business logic
     class Component1 : BaseComponent
     {
         public void DoA()

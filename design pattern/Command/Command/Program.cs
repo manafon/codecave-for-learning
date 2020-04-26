@@ -9,6 +9,10 @@ namespace Command
     /**
      * Behavioral Patterns
      * Make command/operation into objects so it can queue, schedule, redo...
+     * 
+     * Solve Problems:
+     * 1. parametrize object with operations, configuring executions
+     * 2. Provide queue operation, schedule execution,  redo, storing executions
      */
     class Program
     {
