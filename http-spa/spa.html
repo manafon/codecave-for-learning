@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div id="main" class="page active">
+      <h1>html SPA test</h1>
+      
+      <p> Main Content </p>
+      <br />
+      <br />
+      <a href="#subPage" class="click-me">Go to subpage</a>
+      <br />
+      <br />
+      <a href="#page404" class="click-me">404</a>
+    </div>
+    <div id="subPage" class="page">
+      <a href="#main">&lt; Back to main </a>
+      <h1>SubPage</h1>
+      <div id="subPageDiv"></div>
+    </div>
+    <div id="page404" class="page">
+      <a href="#main">&lt; Back to main </a>
+      <h1>404</h1>
+      <h2 id="page404-error"></h2>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
